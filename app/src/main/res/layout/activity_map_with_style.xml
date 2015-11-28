@@ -44,6 +44,6 @@
         android:layout_height="match_parent"
         map:cameraTargetLat="40.7484"
         map:cameraTargetLng="-73.9857"
-        />
+        tools:layout="@layout/abc_screen_simple" />
 
 </LinearLayout>

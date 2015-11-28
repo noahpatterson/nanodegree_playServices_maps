@@ -2,6 +2,8 @@ package com.example.noahpatterson.playservicesmaps;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,6 +23,39 @@ public class MapWithStyleActivity extends AppCompatActivity implements OnMapRead
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        //regular map
+        Button mapViewButton = (Button) findViewById(R.id.mapViewButton);
+        mapViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mapReady) {
+                    map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                }
+            }
+        });
+
+        //satellite map
+        Button satelliteViewButton = (Button) findViewById(R.id.satelliteViewButton);
+        satelliteViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mapReady) {
+                    map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                }
+            }
+        });
+
+        //hybird map
+        Button hybirdViewButton = (Button) findViewById(R.id.hybridViewButton);
+        hybirdViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mapReady) {
+                    map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                }
+            }
+        });
     }
 
 
