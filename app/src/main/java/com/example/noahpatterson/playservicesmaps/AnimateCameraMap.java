@@ -11,6 +11,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -36,6 +37,12 @@ public class AnimateCameraMap extends AppCompatActivity implements OnMapReadyCal
                             .add(newYorkLatLng)
                             .add(veggieResturantLatLng);
 
+                    CircleOptions circleOptions = new CircleOptions()
+                            .center(veggieResturantLatLng)
+                            .radius(5)
+                            .fillColor(R.color.colorPrimary)
+                            .strokeColor(R.color.colorPrimary);
+
                     MarkerOptions markerOptions = new MarkerOptions()
                             .position(newYorkLatLng)
                             .title("New York")
@@ -48,6 +55,7 @@ public class AnimateCameraMap extends AppCompatActivity implements OnMapReadyCal
 
                     googleMap.addMarker(markerOptions);
                     googleMap.addPolyline(polylineOptions);
+                    googleMap.addCircle(circleOptions);
                     googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), 3000, null);
                 }
             }
