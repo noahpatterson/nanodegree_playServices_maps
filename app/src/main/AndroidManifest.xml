@@ -33,7 +33,8 @@
         </activity>
         <activity android:name=".BasicMapActivity" />
         <activity android:name=".MapWithStyleActivity" />
-        <activity android:name=".AnimateCameraMap"></activity>
+        <activity android:name=".AnimateCameraMap" />
+        <activity android:name=".StreetViewActivity"></activity>
     </application>
 
 </manifest>

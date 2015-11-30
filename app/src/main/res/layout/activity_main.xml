@@ -28,6 +28,12 @@
         style="@style/Widget.AppCompat.Button"
         android:text="Animated maps"
         android:onClick="openAnimatedMap"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button"
+        android:text="StreetView maps"
+        android:onClick="openStreetView"/>
 
 </LinearLayout>
 
