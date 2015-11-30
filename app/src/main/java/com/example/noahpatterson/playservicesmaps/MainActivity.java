@@ -22,4 +22,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MapWithStyleActivity.class);
         startActivity(intent);
     }
+
+    public void openAnimatedMap(View view) {
+        Intent intent = new Intent(this, AnimateCameraMap.class);
+        startActivity(intent);
+    }
 }

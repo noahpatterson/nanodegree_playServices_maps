@@ -32,7 +32,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BasicMapActivity" />
-        <activity android:name=".MapWithStyleActivity"></activity>
+        <activity android:name=".MapWithStyleActivity" />
+        <activity android:name=".AnimateCameraMap"></activity>
     </application>
 
 </manifest>
