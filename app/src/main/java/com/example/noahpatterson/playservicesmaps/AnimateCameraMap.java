@@ -13,6 +13,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class AnimateCameraMap extends AppCompatActivity implements OnMapReadyCallback{
     private GoogleMap googleMap;
@@ -30,15 +31,23 @@ public class AnimateCameraMap extends AppCompatActivity implements OnMapReadyCal
             public void onClick(View v) {
                 if (mapReady) {
                     LatLng newYorkLatLng = new LatLng(40.7127, -74.0059);
+                    LatLng veggieResturantLatLng = new LatLng(40.7291,-73.9986);
+                    PolylineOptions polylineOptions = new PolylineOptions()
+                            .add(newYorkLatLng)
+                            .add(veggieResturantLatLng);
+
                     MarkerOptions markerOptions = new MarkerOptions()
                             .position(newYorkLatLng)
                             .title("New York")
                             .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+
                     CameraPosition cameraPosition = CameraPosition.builder()
                             .target(newYorkLatLng)
                             .zoom(14)
                             .build();
+
                     googleMap.addMarker(markerOptions);
+                    googleMap.addPolyline(polylineOptions);
                     googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), 3000, null);
                 }
             }
